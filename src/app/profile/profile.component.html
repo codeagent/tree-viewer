@@ -1,0 +1,15 @@
+<img class="profile__avatar" [src]="user?.avatar" />
+<h2 class="profile__name">{{ user?.name }}</h2>
+<div class="profile__email text--muted" #tigger="matMenuTrigger" [matMenuTriggerFor]="menu">
+  <span>{{ user?.email }}</span>
+  <span class="flex-1"></span>
+  <mat-icon *ngIf="!tigger.menuOpen">arrow_drop_down</mat-icon>
+  <mat-icon *ngIf="tigger.menuOpen">arrow_drop_up</mat-icon>
+</div>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="signOut()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

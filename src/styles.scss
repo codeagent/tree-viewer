@@ -1,0 +1,64 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.flex-center {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex: 1;
+}
+
+.mat-toolbar {
+  h1,
+  button {
+    font-weight: 400;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+.text--muted {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.text--right {
+  text-align: right;
+}
+
+.cdk-virtual-scroll-content-wrapper {
+  position: sticky !important;
+  transform: translateY(0) !important;
+}

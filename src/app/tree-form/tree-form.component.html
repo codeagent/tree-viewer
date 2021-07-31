@@ -1,0 +1,90 @@
+<form [formGroup]="form">
+  <h2 class="flex">Generate a new tree</h2>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Roots</mat-label>
+    <input
+        matInput
+        type="number"
+        placeholder="Roots"
+        formControlName="roots"
+
+      />
+    <mat-error *ngIf="form.get('roots')?.hasError('required')">
+      Field required
+    </mat-error>
+    <mat-error *ngIf="form.get('roots')?.hasError('min')">
+      Minimum vlaue is 0
+    </mat-error>
+  </mat-form-field>
+
+  <table cellspacing=" 0">
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Min children</mat-label>
+          <input  matInput
+              type="number"
+              placeholder="Min children"
+              formControlName="minChildren">
+          <mat-error *ngIf="form.get('minChildren')?.hasError('required')">
+            Field required
+          </mat-error>
+          <mat-error *ngIf="form.get('minChildren')?.hasError('min')">
+            Minimum vlaue is 0
+          </mat-error>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Max children</mat-label>
+          <input  matInput
+              type="number"
+              placeholder="Max children"
+              formControlName="maxChildren">
+          <mat-error *ngIf="form.get('maxChildren')?.hasError('required')">
+            Field required
+          </mat-error>
+          <mat-error *ngIf="form.get('maxChildren')?.hasError('min')">
+            Minimum vlaue is 0
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Max depth</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="Max depth"
+        formControlName="maxDepth"
+
+      />
+      <mat-error *ngIf="form.get('maxDepth')?.hasError('required')">
+        Field required
+      </mat-error>
+      <mat-error *ngIf="form.get('maxDepth')?.hasError('min')">
+        Minimum vlaue is 0
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p class="text--right">
+    <button
+    mat-flat-button
+    color="primary"
+    (click)="generate()"
+    [disabled]="form.invalid"
+  >
+    GENERATE
+  </button>
+  </p>
+
+
+
+</form>

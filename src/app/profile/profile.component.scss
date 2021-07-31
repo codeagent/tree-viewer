@@ -1,0 +1,25 @@
+$profile-padding: 16px;
+$profile-img-size: 64px;
+$profile-img-margin: 16px;
+
+:host {
+  display: flex;
+  padding: $profile-padding;
+  flex-direction: column;
+}
+
+.profile__avatar {
+  width: $profile-img-size;
+  height: $profile-img-size;
+  border-radius: 50%;
+  margin-bottom: $profile-img-margin;
+}
+
+.profile__name {
+  margin: 0;
+}
+
+.profile__email {
+  display: flex;
+  align-items: center;
+}

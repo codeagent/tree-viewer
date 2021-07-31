@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-drawer-container {
+  flex: 1;
+}
+
+.mat-drawer-content {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1;
+}
+
+.mat-list-item {
+  min-width: 25vw;
+}
+
+.mat-nav-list {
+  padding-top: 0;
+}

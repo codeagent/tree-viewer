@@ -1,0 +1,27 @@
+<div class="flex flex-1 flex-center flex-column" *ngIf="!tree">
+  <span class="text--muted">There is no exsisting tree found</span>
+  <a mat-stroked-button color="primary" [routerLink]="['/tree/form']">CREATE ONE</a>
+</div>
+
+<div class="container" *ngIf="tree">
+  <cdk-virtual-scroll-viewport itemSize="50" style="height: 100%">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" cdkDropList>
+
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        {{node.value}}
+      </mat-tree-node>
+
+      <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.item">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+
+        {{node.value}}
+      </mat-tree-node>
+    </mat-tree>
+  </cdk-virtual-scroll-viewport>
+</div>
